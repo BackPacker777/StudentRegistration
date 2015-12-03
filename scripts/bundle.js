@@ -45,7 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/*  AUTHOR: hbates@northmen.org
-	 *  VERSION: 1.1
+	 *  VERSION: 1.10
 	 *  CREATED: 11.25.2015
 	 *  PURPOSE: Register Northmen!
 	 */
@@ -147,6 +147,7 @@
 	})();
 
 	window.onload = function () {
+	    var sibCounter = 0;
 	    var mainObject = new main();
 	    document.getElementById("date").innerText = main.setDate();
 	    main.fade("in", "date");
@@ -156,7 +157,9 @@
 	    document.getElementById("studentZip").addEventListener("change", mainObject.loadZipData);
 	    document.getElementById("livesWith").addEventListener("change", main.fadeHousing);
 	    document.getElementById("homeless").addEventListener("click", main.fadeHomeless);
-	    document.getElementById("addSibling").addEventListener("click", new _AddDivClass2.default("sibling").addDiv());
+	    document.getElementById("addSibling").addEventListener("click", function () {
+	        sibCounter++;new _AddDivClass2.default("sibling").addDiv(sibCounter);
+	    });
 	};
 
 /***/ },
@@ -302,7 +305,14 @@
 
 	    _createClass(AddDivClass, [{
 	        key: "addDiv",
-	        value: function addDiv() {}
+	        value: function addDiv(counter) {
+	            if (this.whichDiv == "sibling") {
+	                var newSibRow = document.createElement("div");
+	                newSibRow.className = "row";
+	                newSibRow.innerHTML = '<div class="small-2 columns">' + '<span class="label">Last Name</span><br>' + '<input name="sibLastName1" id="sibLastName1" placeholder="Last Name" type="text">' + '</div>' + '<div class="small-2 columns">' + '<span class="label">First Name</span><br>' + '<input name="sibFirstName1" id="sibFirstName1" placeholder="First Name" type="text">' + '</div>' + '<div class="small-2 columns">' + '<span class="label">DoB</span><br>' + '<input name="sibDob1" id="sibDob1" type="date">' + '</div>' + '<div class="small-1 columns">' + '<span class="label">Grade</span><br>' + '<input name="sibGrade1" id="sibGrade1" placeholder="Grade" type="number">' + '</div>' + '<div class="small-2 columns end">' + '<span class="label">School</span><br>' + '<select name="sibSchool1" id="sibSchool1" required>' + '<option>Choose</option>' + '<option value="1">Central</option>' + '<option value="2">Lincoln</option>' + '<option value="3">Ottawa</option>' + '<option value="4">Sheridan</option>' + '<option value="5">Middle School</option>' + '<option value="6">High School</option>' + '<option value="7">Montessori</option>' + '</select>' + '</div>';
+	                document.getElementById("siblings").appendChild(newSibRow);
+	            }
+	        }
 	    }]);
 
 	    return AddDivClass;

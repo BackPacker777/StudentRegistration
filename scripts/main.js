@@ -1,5 +1,5 @@
 /*  AUTHOR: hbates@northmen.org
- *  VERSION: 1.1
+ *  VERSION: 1.10
  *  CREATED: 11.25.2015
  *  PURPOSE: Register Northmen!
  */
@@ -78,6 +78,7 @@ class main {
 }
 
 window.onload = function() {
+    let sibCounter = 0;
     let mainObject = new main();
     document.getElementById("date").innerText = main.setDate();
     main.fade("in","date");
@@ -87,5 +88,5 @@ window.onload = function() {
     document.getElementById("studentZip").addEventListener("change", mainObject.loadZipData);
     document.getElementById("livesWith").addEventListener("change", main.fadeHousing);
     document.getElementById("homeless").addEventListener("click", main.fadeHomeless);
-    document.getElementById("addSibling").addEventListener("click", new AddDivClass("sibling").addDiv());
+    document.getElementById("addSibling").addEventListener("click", function(){sibCounter++; new AddDivClass("sibling").addDiv(sibCounter)});
 };
