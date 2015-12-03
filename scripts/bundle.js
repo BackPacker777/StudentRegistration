@@ -62,6 +62,10 @@
 
 	var _FadeStuffClass2 = _interopRequireDefault(_FadeStuffClass);
 
+	var _AddDivClass = __webpack_require__(3);
+
+	var _AddDivClass2 = _interopRequireDefault(_AddDivClass);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -152,6 +156,7 @@
 	    document.getElementById("studentZip").addEventListener("change", mainObject.loadZipData);
 	    document.getElementById("livesWith").addEventListener("change", main.fadeHousing);
 	    document.getElementById("homeless").addEventListener("click", main.fadeHomeless);
+	    document.getElementById("addSibling").addEventListener("click", new _AddDivClass2.default("sibling").addDiv());
 	};
 
 /***/ },
@@ -268,6 +273,42 @@
 	})();
 
 	exports.default = FadeStuffClass;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	/*  AUTHOR: hbates@northmen.org
+	 *  VERSION: 1.0
+	 *  CREATED: 12.01.2015
+	 */
+
+	"use strict";
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var AddDivClass = (function () {
+	    function AddDivClass(whichDiv) {
+	        _classCallCheck(this, AddDivClass);
+
+	        this.whichDiv = whichDiv;
+	    }
+
+	    _createClass(AddDivClass, [{
+	        key: "addDiv",
+	        value: function addDiv() {}
+	    }]);
+
+	    return AddDivClass;
+	})();
+
+	exports.default = AddDivClass;
 
 /***/ }
 /******/ ]);

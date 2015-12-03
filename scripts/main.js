@@ -8,6 +8,7 @@
 
 import LoadDataClass from './LoadDataClass';
 import FadeStuffClass from './FadeStuffClass';
+import AddDivClass from './AddDivClass';
 
 class main {
     constructor() {
@@ -86,4 +87,5 @@ window.onload = function() {
     document.getElementById("studentZip").addEventListener("change", mainObject.loadZipData);
     document.getElementById("livesWith").addEventListener("change", main.fadeHousing);
     document.getElementById("homeless").addEventListener("click", main.fadeHomeless);
+    document.getElementById("addSibling").addEventListener("click", new AddDivClass("sibling").addDiv());
 };
