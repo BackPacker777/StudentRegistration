@@ -4,7 +4,7 @@
 	VERSION: 1.0
 	CREATED: 10.15.2015.01
 	PURPOSE: PPS Student Registration Page
-	TODO:
+	TODO: Handle results, handle all zip codes
 -->
 <html lang="en">
     <head>
@@ -13,7 +13,7 @@
         <link href="css/foundation.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
     </head>
-    <body>
+    <body id="northmenReg">
     <img src='images/PPS_Logo.png' alt='PPS Logo' id='ppsLogo'>
     <div class="row">
         <div class="small-8 columns">
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="panel radius">
-        <form id='form' name='form' action="pages/result.html">
+        <form id='form' name='form' action="" method="post" enctype="application/x-www-form-urlencoded" novalidate>
             <div class="row">
                 <fieldset id='studentInfo'>
                     <legend>Student Information</legend>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="small-3 columns">
                             <span class="label">Middle Name</span><br>
-                            <input name='middleName' id='middleName' placeholder='Middle Name' type='text' required>
+                            <input name='middleName' id='middleName' placeholder='Middle Name' type='text'>
                         </div>
                         <div class="small-3 columns">
                             <span class="label">Suffix</span><br>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="small-2 columns end">
                             <span class="label">Primary Language in Home</span><br>
-                            <input name='language' id='language' placeholder='Language' type='text' required>
+                            <input name='language' id='language' placeholder='Language' type='text'>
                         </div>
                         <div class="small-3 columns end">
                             <span class="label">Parent Active or Inactive Duty Military?</span><br>
@@ -430,31 +430,99 @@
                         </div>
                     </div>
                     <div class="row">
+                    <div class="small-2 columns">
+                        <span class="label">Emergency Contact 1 Name</span><br>
+                        <select name='ContactTitle1' id='ContactTitle1'>
+                            <option>Choose</option>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Dr.">Dr.</option>
+                        </select>
+                    </div>
+                    <div class="small-2 columns">
+                        <br><input name='ContactLastName1' id='ContactLastName1' placeholder='Last Name' type='text'>
+                    </div>
+                    <div class="small-2 columns">
+                        <br><input name='ContactFirstName1' id='ContactFirstName1' placeholder='First Name' type='text'>
+                    </div>
+                    <div class="small-2 columns">
+                        <span class="label">Contact Email</span><br>
+                        <input name='ContactEmail1' id='ContactEmail1' placeholder='Contact Email' type='email'>
+                    </div>
+                    <div class="small-2 columns">
+                        <span class="label">Contact Phone</span><br>
+                        <input name='ContactPhone1' id='ContactPhone1' placeholder='Contact Phone' type='tel'>
+                    </div>
+                    <div class="small-2 columns">
+                        <span class="label">Phone Type</span><br>
+                        <select name='ContactPhone1Type' id='ContactPhone1Type'>
+                            <option>Choose</option>
+                            <option value="Cell">Cell</option>
+                            <option value="Home">Home</option>
+                            <option value="Work">Work</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                    <div class="row">
                         <div class="small-2 columns">
-                            <span class="label">Contact Name</span><br>
-                            <select name='1ContactTitle' id='1ContactTitle' required>
+                            <span class="label">Emergency Contact 2 Name</span><br>
+                            <select name='ContactTitle2' id='ContactTitle2' >
                                 <option>Choose</option>
                                 <option value="Mr.">Mr.</option>
                                 <option value="Dr.">Dr.</option>
                             </select>
                         </div>
                         <div class="small-2 columns">
-                            <br><input name='1ContactLastName' id='1ContactLastName' placeholder='Last Name' type='text' required>
+                            <br><input name='ContactLastName2' id='ContactLastName2' placeholder='Last Name' type='text'>
                         </div>
                         <div class="small-2 columns">
-                            <br><input name='1ContactFirstName' id='1ContactFirstName' placeholder='First Name' type='text' required>
+                            <br><input name='ContactFirstName2' id='ContactFirstName2' placeholder='First Name' type='text'>
                         </div>
                         <div class="small-2 columns">
                             <span class="label">Contact Email</span><br>
-                            <input name='1ContactEmail' id='1ContactEmail' placeholder='Contact Email' type='email'>
+                            <input name='ContactEmail2' id='ContactEmail2' placeholder='Contact Email' type='email'>
                         </div>
                         <div class="small-2 columns">
                             <span class="label">Contact Phone</span><br>
-                            <input name='1ContactPhone1' id='1ContactPhone1' placeholder='Contact Phone' type='tel' required>
+                            <input name='ContactPhone2' id='ContactPhone2' placeholder='Contact Phone' type='tel'>
                         </div>
                         <div class="small-2 columns">
                             <span class="label">Phone Type</span><br>
-                            <select name='1ContactPhone1Type' id='1ContactPhone1Type' required>
+                            <select name='ContactPhone2Type' id='ContactPhone2Type'>
+                                <option>Choose</option>
+                                <option value="Cell">Cell</option>
+                                <option value="Home">Home</option>
+                                <option value="Work">Work</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="small-2 columns">
+                            <span class="label">Emergency Contact 3 Name</span><br>
+                            <select name='ContactTitle3' id='ContactTitle3'>
+                                <option>Choose</option>
+                                <option value="Mr.">Mr.</option>
+                                <option value="Dr.">Dr.</option>
+                            </select>
+                        </div>
+                        <div class="small-2 columns">
+                            <br><input name='ContactLastName3' id='ContactLastName3' placeholder='Last Name' type='text'>
+                        </div>
+                        <div class="small-2 columns">
+                            <br><input name='ContactFirstName3' id='ContactFirstName3' placeholder='First Name' type='text'>
+                        </div>
+                        <div class="small-2 columns">
+                            <span class="label">Contact Email</span><br>
+                            <input name='ContactEmail3' id='ContactEmail3' placeholder='Contact Email' type='email'>
+                        </div>
+                        <div class="small-2 columns">
+                            <span class="label">Contact Phone</span><br>
+                            <input name='ContactPhone3' id='ContactPhone3' placeholder='Contact Phone' type='tel'>
+                        </div>
+                        <div class="small-2 columns">
+                            <span class="label">Phone Type</span><br>
+                            <select name='ContactPhone3Type' id='ContactPhone3Type'>
                                 <option>Choose</option>
                                 <option value="Cell">Cell</option>
                                 <option value="Home">Home</option>
@@ -579,6 +647,9 @@
                         <div class="small-4 columns end">
                             <input type='checkbox' name='specialServices' id="ell" value='English Language Learner'><label>English Language Learner</label>
                         </div>
+                        <div class="small-4 columns end" id="ellSupport">
+                            <input type='checkbox' name='specialServices' id="ellHelp" value='ELL Help Requested'><label>Do you wish ELL support?</label>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="small-2 columns">
@@ -600,16 +671,17 @@
             </div>
             <div class="row">
                 <div class="small-2 columns">
-                    <input type='submit' id='completed' value='Completed!' class="button round">
+                    <input type='submit' id='completed' value='Completed!' class="button">
                 </div>
                 <div class="small-2 columns">
-                    <input type='reset' id='reset' value='Reset Form' class="button round alert">
+                    <input type='reset' id='reset' value='Reset Form' class="button alert">
                 </div>
             </div>
         </form>
     </div>
 
     <!-- SCRIPTS -->
+    <script src="scripts/vue.min.js"></script>
     <script src="scripts/bundle.js"></script>
     </body>
 </html>

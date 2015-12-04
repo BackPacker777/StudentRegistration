@@ -141,6 +141,16 @@
 	                main.fade("in", "homelessResidence");
 	            }
 	        }
+	    }, {
+	        key: 'fadeEllHelp',
+	        value: function fadeEllHelp() {
+	            var ell = document.getElementById("ell");
+	            if (!ell.checked) {
+	                main.fade("out", "ellSupport");
+	            } else if (ell.checked) {
+	                main.fade("in", "ellSupport");
+	            }
+	        }
 	    }]);
 
 	    return main;
@@ -154,9 +164,11 @@
 	    main.fade("in", "ppsLogo");
 	    main.fadeHousing();
 	    main.fadeHomeless();
+	    main.fadeEllHelp();
 	    document.getElementById("studentZip").addEventListener("change", mainObject.loadZipData);
 	    document.getElementById("livesWith").addEventListener("change", main.fadeHousing);
 	    document.getElementById("homeless").addEventListener("click", main.fadeHomeless);
+	    document.getElementById("ell").addEventListener("click", main.fadeEllHelp);
 	    document.getElementById("addSibling").addEventListener("click", function () {
 	        sibCounter++;new _AddDivClass2.default("sibling").addDiv(sibCounter);
 	    });

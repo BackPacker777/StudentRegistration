@@ -75,6 +75,16 @@ class main {
             main.fade("in", "homelessResidence");
         }
     }
+
+    static fadeEllHelp() {
+        let ell = document.getElementById("ell");
+        if (!(ell.checked)) {
+            main.fade("out", "ellSupport");
+        } else if (ell.checked) {
+            main.fade("in", "ellSupport");
+        }
+    }
+
 }
 
 window.onload = function() {
@@ -85,8 +95,10 @@ window.onload = function() {
     main.fade("in","ppsLogo");
     main.fadeHousing();
     main.fadeHomeless();
+    main.fadeEllHelp();
     document.getElementById("studentZip").addEventListener("change", mainObject.loadZipData);
     document.getElementById("livesWith").addEventListener("change", main.fadeHousing);
     document.getElementById("homeless").addEventListener("click", main.fadeHomeless);
+    document.getElementById("ell").addEventListener("click", main.fadeEllHelp);
     document.getElementById("addSibling").addEventListener("click", function(){sibCounter++; new AddDivClass("sibling").addDiv(sibCounter)});
 };

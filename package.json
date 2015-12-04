@@ -1,0 +1,27 @@
+{
+  "name": "studentregistration",
+  "version": "1.0.0",
+  "description": "Register Northmen!",
+  "main": "server.js",
+  "dependencies": {
+    "babel-eslint": "^4.1.6",
+    "eslint": "^1.10.2",
+    "express": "^4.13.3",
+    "formidable": "^1.0.17",
+    "webpack": "^1.12.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BackPacker777/StudentRegistration.git"
+  },
+  "author": "hbates@northmen.org",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BackPacker777/StudentRegistration/issues"
+  },
+  "homepage": "https://github.com/BackPacker777/StudentRegistration#readme"
+}
